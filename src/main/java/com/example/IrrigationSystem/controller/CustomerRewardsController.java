@@ -1,6 +1,7 @@
 package com.example.IrrigationSystem.controller;
 
 import com.example.IrrigationSystem.service.CustomRewardsService;
+import com.example.IrrigationSystem.service.CustomerRewardsInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class CustomerRewardsController {
     private Logger logger = LoggerFactory.getLogger(CustomerRewardsController.class);
 
     @Autowired
-    CustomRewardsService rewardsService;
+    CustomerRewardsInterface rewardsService;
 
     @RequestMapping("/getRewards/{amount}")
     public ResponseEntity<Integer> getRewardsPoints(@PathVariable("amount") int amount) {
